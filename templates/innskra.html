@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Innskrá</h2>
+    <form action="/login" method="POST">
+        <div class="container">
+            <label for="user"><b>Notandi</b></label>
+            <input type="text" placeholder="Notandi" name="user" required>
+            <label for="psw"><b>Lykilorð</b></label>
+            <input type="password" placeholder="lykilorð" name="psw" required>
+            <button type="submit" class="cancelbtn" style="margin-top: 15px;">Login</button>
+        </div>
+        <div class="container">
+            <h5>Vantar þér aðgang? Nýskráðu þig að neðan.</h5>
+            <a href="/nyskra"><button type="button" class="cancelbtn">Nýskrá</button></a>
+        </div>
+    </form>
+{% endblock %}

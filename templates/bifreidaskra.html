@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Bifreiðaskrá</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Númer</th>
+        <th>Tegund</th>
+        <th>Undirtegund</th>
+        <th>Árgerð</th>
+        <th>Akstur</th>
+    </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="5">Smelltu á bílnúmerið til að breyta eða eyða upplýsingum bifreiðar.</td>
+        </tr>
+    </tfoot>
+    <tbody>
+    {% for i in bilar %}
+    <tr>
+        <td data-label="Númer:"> <a href="bill/{{ i[0] }}">{{ i[1]['nr'] }}</a></td>
+        <td data-label="Tegund:"> {{ i[1]['tegund'] }}</td>
+        <td data-label="Undirtegund:"> {{ i[1]['utegund'] }}</td>
+        <td data-label="Árgerð:"> {{ i[1]['argerd'] }}</td>
+        <td data-label="Akstur:"> {{ i[1]['akstur'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="/utskra"><button type="button" class="cancelbtn">Útskráning</button></a>
+<a href="/nyskrabil"><button type="button" class="cancelbtn">Nýskráning bifreiðar</button></a>
+{% endblock%}
+

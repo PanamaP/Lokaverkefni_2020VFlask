@@ -1,0 +1,27 @@
+body {
+    max-width: 50em;
+    margin: 1em auto;
+    padding: 0 1em;
+}
+.topmenu {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: rgba(255, 255, 255, .8);
+}
+.topmenu a {
+    display: block;
+    color: rgb(132, 0, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align:left;
+    padding: 1em;
+    margin: 0;
+    letter-spacing: 2px;
+}
+.topmenu a.current {
+    color: #ed5565;
+}

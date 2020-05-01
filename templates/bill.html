@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Breyta / Eyða</h2>
+
+<form action="/breytaeyda" method="POST" class="register">
+    <div>
+        <input type="hidden" value="{{ id }}" name="id">
+        <label>Skráningarnúmer</label>
+        <input type="text" value="{{ bill[2][1] }}" name="nr" maxlength="6" required>
+    </div>
+    <div>
+        <label>Tegund:</label>
+        <input type="text" value="{{ bill[3][1] }}" name="tegund" required>
+    </div>
+    <div>
+        <label>Undirtegund:</label>
+        <input type="text" value="{{ bill[4][1] }}" name="utegund" required>
+    </div>
+    <div>
+        <label>Árgerð</label>
+        <input type="text" value="{{ bill[1][1] }}" name="argerd" required>
+    </div>
+    <div>
+        <label>Akstur</label>
+        <input type="text" value="{{ bill[0][1] }}" name="akstur" required>
+    </div>
+    <button type="submit" name="submit" value="breyta">Breyta</button>
+    <button type="submit" name="submit" value="eyda">Eyða</button>
+</form>
+{% endblock %}

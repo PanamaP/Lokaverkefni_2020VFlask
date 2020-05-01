@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Nýskrá bifreið</h2>
+<div class="register">
+    <form action="/donyskrabil" method="POST">
+        <div>
+            <label>Skráningarnúmer</label>
+            <input type="text" placeholder="Skráningarnúmer" name="nr" maxlength="6" required>
+        </div>
+        <div>
+            <label>Tegund:</label>
+            <input type="text" placeholder="tegund" name="tegund" required>
+        </div>
+        <div>
+            <label>Undirtegund:</label>
+            <input type="text" placeholder="undirtegund" name="utegund" required>
+        </div>
+        <div>
+            <label>Árgerð:</label>
+            <input type="text" placeholder="árgerð" name="argerd" required>
+        </div>
+        <div>
+            <label>Akstur:</label>
+            <input type="text" placeholder="akstur" name="akstur" required>
+        </div>
+        <div><button type="submit">Skrá</button> </div>
+    </form>
+</div>
+{% endblock %}
