@@ -1,6 +1,6 @@
 import pyrebase
 from flask import Flask, render_template, request, redirect, url_for, session
-from config import api_key
+from config import *
 import os
 
 app = Flask(__name__)
@@ -94,9 +94,9 @@ def bifreidaskra():
 
 @app.route('/bill/<id>')
 def bill(id):
-    u = db.child('bill').get().val()
+    u = db.child('bill').child(id).get().val()
     lst = list(u.items())
-    return render_template('bill.html', bill=bill, id=id)
+    return render_template('bill.html', bill=lst, id=id)
 
 
 @app.route('/nyskrabil')
@@ -136,10 +136,12 @@ def breytaeyda():
             db.child("bill").child(request.form['id']).remove()
             return render_template('eytt.html', nr=request.form['nr'])
         else:
-            db.child("bill").child(request.form['id'].update({"nr": request.form['nr'], "tegund": request.form[
-                'tegund'], "utegund": request.form['utegund'], "argerd": request.form['argerd'], "akstur":
-                request.form['akstur']}))
-            return render_template('uppfaert.html', nr = request.form['nr'])
+            db.child("bill").child(request.form['id']).update({"nr": request.form['nr'],
+                                                               "tegund": request.form['tegund'],
+                                                               "utegund": request.form['utegund'],
+                                                               "argerd": request.form['argerd'],
+                                                               "akstur": request.form['akstur']})
+            return render_template('uppfaert.html', nr=request.form['nr'])
     else:
         return render_template("no_method.html")
 
