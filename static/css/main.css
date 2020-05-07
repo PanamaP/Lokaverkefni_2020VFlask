@@ -10,18 +10,95 @@ body {
     padding: 0;
     margin: 0;
     list-style: none;
-    background-color: rgba(255, 255, 255, .8);
 }
 .topmenu a {
     display: block;
-    color: rgb(132, 0, 255);
     text-decoration: none;
     text-transform: uppercase;
-    text-align:left;
     padding: 1em;
     margin: 0;
-    letter-spacing: 2px;
 }
 .topmenu a.current {
     color: #ed5565;
 }
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.container img{
+    width: 100%;
+
+}
+input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.cancelbtn {
+
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelbtn:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#cars {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#cars td, #cars th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#cars tr:hover {background-color: #ddd;}
+
+#cars th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+/* Clear floats after the columns */
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+

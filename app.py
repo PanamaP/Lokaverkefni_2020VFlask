@@ -25,6 +25,10 @@ db = fb.database()
 def index():
     return render_template('index.html')
 
+@app.route('/upplysingar')
+def uppl():
+    return render_template('upplysingar.html')
+
 
 @app.route('/innskra')
 def login():
